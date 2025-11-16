@@ -6,6 +6,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TextCounterTest {
 
+    //https://github.com/VahidErfani/Inlamingsuppgift.git
+
     @Test
     void testStandardCounting() {
 
@@ -23,10 +25,10 @@ public class TextCounterTest {
     }
 
     @Test
-    void testStopWordAndNoCount() {
+    void testStopWordAndNoCount() { //
 
         TextCounter tc = new TextCounter();
-]
+
         String rad1 = "Första raden";
         String stoppord = " stop ";
 
@@ -61,5 +63,39 @@ public class TextCounterTest {
 
 
     }
+
+    @Test
+    void testWordCounting() {
+
+        TextCounter tc = new TextCounter();
+
+        tc.analyzeLine("Detta är första raden");
+
+        tc.analyzeLine("  rad två");
+
+        tc.analyzeLine("ett-två-tre 456");
+
+        assertEquals(8, tc.getOrd(), "Ska räkna totalt 8 ord");
+
+
+    }
+
+    @Test
+    void testLongestWord() {
+
+        TextCounter tc = new TextCounter();
+
+        tc.analyzeLine("Ferrari Bentley");
+
+        tc.analyzeLine("Mercedes BMW Lexus Porsche");
+
+        tc.analyzeLine("Lamborghini Rolls-Royce");
+
+        assertEquals("Lamborghini, Rolls-Royce", tc.getLangstaOrdet(), "Ska skriva ut båda orden då de är lika långa");
+
+
+    }
+
+
 
 }

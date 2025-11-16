@@ -1,5 +1,6 @@
 package Inlamning.Prog;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MainProgram {
@@ -12,9 +13,9 @@ public class MainProgram {
 
     static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-
         TextCounter textcounter = new TextCounter();
+
+        Scanner scanner = new Scanner(System.in);
 
         String inmatning;
 
@@ -27,12 +28,23 @@ public class MainProgram {
                 break;
             }
 
-        } while(true);
+        } while (true);
 
         scanner.close();
 
         System.out.println("Antal rader: " + textcounter.getAntalRader());
         System.out.println("Antal tecken: " + textcounter.getAntalTecken());
+        System.out.println("Antal ord: " + textcounter.getOrd());
+        System.out.println("Längsta ordet: " + textcounter.getLangstaOrdet());
+
+
+
+
+
+
+
+
+
 
 
 
